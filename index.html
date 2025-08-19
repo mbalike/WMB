@@ -56,6 +56,7 @@
 
     /* HERO (clean, bright) */
     .hero{position:relative;min-height:92vh;display:grid;align-items:center;background:var(--bg-soft);overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.7) 50%, rgba(255,255,255,.85))}
     .hero .slides{position:absolute;inset:0;z-index:0}
     .slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
     .slide.active{opacity:1}
@@ -108,8 +109,8 @@
     /* DOWNLOAD */
     .dl{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
     @media (max-width: 980px){.dl{grid-template-columns:1fr}}
-    .dl-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft)}
-    .dl-art{aspect-ratio:16/9;background:url('assets/company-profile-cover.jpg') center/cover no-repeat, linear-gradient(135deg,#edf2fa,#f7f9fe)}
+    .dl-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow-soft);width:310px;height:439px}
+    .dl-art{width:310px;height:439px;background:url('assets/img/profile-cover.png') center/cover no-repeat, linear-gradient(135deg,#edf2fa,#f7f9fe)}
     .dl-body{padding:18px}
 
     /* FOOTER */
@@ -213,7 +214,7 @@
 
   <!-- INTRO -->
   <section id="about" class="container reveal" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-    <div class="section-title"><span class="dot"></span><h2>Your Gateway to Constructive Collaboration in Tanzania</h2></div>
+    <div class="section-title" style="text-align: center; justify-content: center; width: 100%;"><span class="dot"></span><h2>Your Gateway to<br>Constructive Collaboration in Tanzania</h2></div>
     <div class="intro">
       <div class="card">
         <p>WMB Construction Ltd delivers practical, high‑quality solutions for both <strong>building</strong> and <strong>civil engineering</strong> projects—supported by clear timelines, disciplined budgeting, and workmanship that meets specification.</p>
@@ -273,6 +274,9 @@
           <p>Storage tanks, pump houses and community WASH facilities.</p>
         </article>
       </div>
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="services.html" class="btn primary">View All Services</a>
+      </div>
     </div>
   </section>
 
@@ -283,6 +287,9 @@
       <article class="project"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1600&auto=format&fit=crop" alt="Clinic renovation"><div class="meta"><span class="tag">Zanzibar City</span><h3 style="margin:8px 0 6px 0;font-family:Manrope,DM Sans,sans-serif">Mtoni Primary Health Clinic Renovation</h3><small class="muted">Interior reconfiguration, services upgrades & accessibility improvements.</small></div></article>
       <article class="project"><img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1600&auto=format&fit=crop" alt="Road & drainage"><div class="meta"><span class="tag">Mtwara Urban</span><h3 style="margin:8px 0 6px 0;font-family:Manrope,DM Sans,sans-serif">Local Access Road & Drainage Improvement</h3><small class="muted">1.2 km laterite road, culverts and footpaths to reduce seasonal flooding.</small></div></article>
       <article class="project"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop" alt="Residential housing"><div class="meta"><span class="tag">Morogoro</span><h3 style="margin:8px 0 6px 0;font-family:Manrope,DM Sans,sans-serif">Two‑Storey Staff Housing (Design & Build)</h3><small class="muted">8 units; structural frame, blockwork, roofing, finishes and services.</small></div></article>
+    </div>
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="projects.html" class="btn primary">View All Projects</a>
     </div>
   </section>
 
@@ -380,18 +387,18 @@
 
   <!-- DOWNLOAD -->
   <section id="downloads" class="container reveal" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-    <div class="section-title"><span class="dot"></span><h2>Download Company Profile</h2></div>
+    <div class="section-title"><span class="dot"></span><h2>Company Profile</h2></div>
     <div class="dl">
       <a class="dl-card" href="assets/documents/WMB-Company-Profile.pdf" download>
-        <div class="dl-art" role="img" aria-label="Company Profile front cover"><img src="assets/img/profile-cover.png" alt=""></div>
+        <div class="dl-art" role="img" aria-label="Company Profile front cover"></div>
         <div class="dl-body">
           <h3 style="margin:0 0 6px 0;font-family:Manrope,DM Sans,sans-serif">WMB Company Profile (PDF)</h3>
           <p class="muted" style="margin:0">Credentials, services, registrations and contacts in one brochure.</p>
         </div>
       </a>
       <div>
-        <p class="muted">Replace placeholders by supplying <code>assets/company-profile-cover.jpg</code> and <code>assets/WMB-Company-Profile.pdf</code>. I’ll swap in the real thumbnail from your PDF.</p>
-        <a class="btn primary" href="#contact">Request a Quote</a>
+        <p class="muted" style="margin-bottom: 16px;">Get to know WMB Construction Ltd through our comprehensive company profile. Learn about our capabilities, track record, and commitment to delivering quality construction solutions across Tanzania.</p>
+        <a class="btn primary" href="assets/documents/WMB-Company-Profile.pdf" download>Download Profile</a>
       </div>
     </div>
   </section>
