@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Wise Master Builders (WMB)</title>
+  <meta name="description" content="About WMB Construction: mission, vision, values, certifications, and our story as a Tanzania-based Class VI contractor for building & civil works." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root{
+      --accent:#ff2a2e; /* red only as accent for buttons and tiny chips */
+      --ink:#1b1f2a; --ink-2:#5c6473; --bg:#ffffff; --soft:#f5f7fb; --line:#e7ecf3;
+      --radius:18px; --container:1200px; --shadow:0 8px 24px rgba(0,0,0,.08); --shadow-soft:0 6px 16px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:DM Sans,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Header (shared style from new homepage) */
+    header.site-header{position:sticky;top:0;height:76px;display:flex;align-items:center;z-index:1000;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+    .header-inner{width:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:36px;width:auto}
+    .brand .wordmark{font-family:Manrope,DM Sans,sans-serif;font-weight:800;letter-spacing:.3px}
+    nav.primary{display:flex;gap:26px;align-items:center}
+    nav.primary a{font-weight:700;color:#1f2430;opacity:.9}
+    nav.primary a:hover{opacity:1;text-underline-offset:6px;text-decoration:underline}
+    .cta-btn{background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-weight:800}
+    .nav-toggle{display:none}
+    .mobile-panel{display:none}
+    @media (max-width: 980px){
+      nav.primary{display:none}
+      .nav-toggle{display:inline-flex;align-items:center;gap:8px;color:#1f2430;background:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:12px}
+      .mobile-panel{display:block;position:fixed;inset:76px 0 0 0;background:rgba(255,255,255,.98);border-top:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease}
+      .mobile-panel.open{opacity:1;transform:translateY(0);pointer-events:auto}
+      .mobile-links{display:grid;gap:8px;padding:18px}
+      .mobile-links a{padding:14px 12px;border-radius:12px;font-weight:800}
+      .mobile-links a:hover{background:var(--soft)}
+    }
+
+    /* Hero */
+    .hero{background:var(--soft);padding:90px 0 50px 0;border-bottom:1px solid var(--line)}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#3a4152;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-family:Manrope,DM Sans,sans-serif;font-size:clamp(34px,6vw,56px);line-height:1.06;margin:.15em 0 .2em}
+    .lead{color:var(--ink-2);font-size:clamp(16px,2vw,19px)}
+    .hero-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft);padding:18px}
+    @media (max-width: 980px){.hero .grid{grid-template-columns:1fr}}
+
+    /* Sections */
+    section{padding:72px 0}
+    .title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .title .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .title h2{font-family:Manrope,DM Sans,sans-serif;font-size:clamp(26px,4vw,38px);margin:0}
+    .muted{color:var(--ink-2)}
+
+    /* Cards & grids */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width: 980px){.cards{grid-template-columns:1fr 1fr}}
+    @media (max-width: 620px){.cards{grid-template-columns:1fr}}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-soft);padding:20px}
+
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    @media (max-width: 980px){.kpis{grid-template-columns:1fr 1fr}}
+    .kpi{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px dashed var(--line);border-radius:14px;background:#fff}
+
+    /* Timeline */
+    .timeline{position:relative;border-left:2px solid var(--line);margin-left:16px}
+    .tl-item{position:relative;padding:0 0 18px 18px}
+    .tl-item::before{content:"";position:absolute;left:-10px;top:2px;width:12px;height:12px;background:#fff;border:2px solid var(--accent);border-radius:50%}
+
+    /* Certifications list */
+    .list{display:grid;gap:10px}
+    .list .row{display:flex;gap:12px;align-items:center;border:1px solid var(--line);padding:12px;border-radius:12px;background:#fff}
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;color:#3b4354;font-weight:800}
+
+    /* CTA */
+    .cta{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
+    .cta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
+    @media (max-width: 980px){.cta .wrap{grid-template-columns:1fr}}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:800}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(255,42,46,.25)}
+    .btn.ghost{border:1.4px solid #cfd6e4;color:#1f2430;background:#fff}
+
+    /* Footer (compact) */
+    footer{background:#f8fafc;border-top:1px solid var(--line);color:#495167;padding:32px 0}
+    .mini{font-size:14px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="WMB Home">
+        <img src="assets/logo-wmb.png" alt="WMB Logo"/>
+        <div class="wordmark">Wise Master Builders</div>
+      </a>
+      <nav class="primary" aria-label="Primary Navigation">
+        <a href="index.html#home">Home</a>
+        <a href="#">Who We Are</a>
+        <a href="index.html#services">What We Do</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="index.html#downloads">Downloads</a>
+        <a class="cta-btn" href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open Menu"><i class="bi bi-list"></i></button>
+    </div>
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="mobile-links">
+        <a href="index.html#home">Home</a>
+        <a href="#">Who We Are</a>
+        <a href="index.html#services">What We Do</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="index.html#downloads">Downloads</a>
+        <a class="cta-btn" href="index.html#contact" style="display:inline-flex;justify-content:center">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container grid">
+      <div>
+        <span class="eyebrow"><i class="bi bi-buildings"></i> About WMB</span>
+        <h1>Committed to quality, safety and accountability.</h1>
+        <p class="lead">We’re a Tanzania‑based contractor registered Class VI in Building and Civil works. We plan, build and manage projects with clear timelines, disciplined budgets and workmanship that meets specification.</p>
+      </div>
+      <div class="hero-card">
+        <div class="kpis">
+          <div class="kpi"><i class="bi bi-shield-check" style="font-size:22px;color:#1d8540"></i><div><strong>HSE First</strong><div class="muted">Safety culture across all sites</div></div></div>
+          <div class="kpi"><i class="bi bi-clipboard-check" style="font-size:22px;color:#0f62fe"></i><div><strong>QA/QC</strong><div class="muted">Inspection & documentation</div></div></div>
+          <div class="kpi"><i class="bi bi-hourglass-split" style="font-size:22px;color:#d17d00"></i><div><strong>On‑Time Delivery</strong><div class="muted">Practical scheduling & controls</div></div></div>
+          <div class="kpi"><i class="bi bi-cash-coin" style="font-size:22px;color:#b0020a"></i><div><strong>Cost Discipline</strong><div class="muted">Transparent budgeting</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / Values -->
+  <section>
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Mission, Vision & Core Values</h2></div>
+      <div class="cards">
+        <div class="card"><h3><i class="bi bi-bullseye"></i> Mission</h3><p>To build with integrity—transparent, ethical and honest—while meeting the highest industry standards and consistently exceeding client expectations.</p></div>
+        <div class="card"><h3><i class="bi bi-stars"></i> Vision</h3><p>To be a leading construction company recognized for exceptional craftsmanship, a customer‑centric approach and contributions to resilient, sustainable communities.</p></div>
+        <div class="card"><h3><i class="bi bi-heart-pulse"></i> Core Values</h3>
+          <ul class="muted" style="margin:0 0 0 18px;line-height:1.9">
+            <li>Integrity & accountability</li>
+            <li>Safety & respect for people</li>
+            <li>Quality & continuous improvement</li>
+            <li>Teamwork and clear communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story / Timeline -->
+  <section style="background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Our Story</h2></div>
+      <div class="cards" style="grid-template-columns:1fr 1fr">
+        <div class="card">
+          <p>Founded to deliver dependable, right‑sized solutions for Tanzania’s growing infrastructure and building needs, WMB quickly grew through repeat clients and word‑of‑mouth—thanks to our practical planning, safety standards and quality workmanship.</p>
+          <div class="chip"><i class="bi bi-geo-alt"></i> Tanzania‑wide service</div>
+        </div>
+        <div class="card timeline">
+          <div class="tl-item"><h4 class="muted" style="margin:0 0 6px 0">Class VI Registration</h4><div>Registered for Building and Civil works.</div></div>
+          <div class="tl-item"><h4 class="muted" style="margin:0 0 6px 0">First Design‑Build Delivery</h4><div>Introduced single‑point responsibility to compress schedules and control costs.</div></div>
+          <div class="tl-item"><h4 class="muted" style="margin:0 0 6px 0">Expanded QA/QC</h4><div>Formalized inspections, checklists and handover documentation.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Compliance -->
+  <section>
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Certifications & Compliance</h2></div>
+      <div class="list">
+        <div class="row"><i class="bi bi-award" style="font-size:22px;color:#0f62fe"></i> CRB Registration — Building, Class VI</div>
+        <div class="row"><i class="bi bi-award" style="font-size:22px;color:#0f62fe"></i> CRB Registration — Civil, Class VI</div>
+        <div class="row"><i class="bi bi-file-earmark-check" style="font-size:22px;color:#1d8540"></i> Business License (Building & Civil)</div>
+        <div class="row"><i class="bi bi-file-text" style="font-size:22px;color:#1d8540"></i> Certificate of Incorporation</div>
+        <div class="row"><i class="bi bi-receipt" style="font-size:22px;color:#b0020a"></i> Tax: TIN, VAT Registration, Tax Clearance</div>
+        <div class="row"><i class="bi bi-people" style="font-size:22px;color:#d17d00"></i> NSSF Registration</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team snapshot (optional visuals) -->
+  <section style="background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Our Team</h2></div>
+      <div class="cards">
+        <div class="card"><h3><i class="bi bi-person-badge"></i> Site Management</h3><p class="muted">Experienced supervisors and foremen coordinate trades, enforce HSE and keep schedules on track.</p></div>
+        <div class="card"><h3><i class="bi bi-tools"></i> Technicians & Artisans</h3><p class="muted">Skilled masons, carpenters, electricians and plumbers deliver workmanship that lasts.</p></div>
+        <div class="card"><h3><i class="bi bi-diagram-3"></i> Project Controls</h3><p class="muted">Planning, procurement and QA/QC teams ensure cost and quality discipline from start to finish.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="cta">
+    <div class="container wrap">
+      <div>
+        <h3 style="margin:0 0 6px 0;font-family:Manrope,DM Sans,sans-serif">Ready to build?</h3>
+        <p class="muted" style="margin:0">Share your scope and timeline—we’ll recommend the most practical delivery method for your project.</p>
+      </div>
+      <div>
+        <a class="btn primary" href="index.html#contact"><i class="bi bi-envelope-paper"></i> Request a Quote</a>
+        <a class="btn ghost" href="assets/WMB-Company-Profile.pdf" download style="margin-left:8px"><i class="bi bi-filetype-pdf"></i> Company Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container mini">© <span id="year"></span> Wise Master Builders Ltd. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile drawer
+    const navToggle = document.getElementById('navToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+    if(navToggle){
+      navToggle.addEventListener('click', ()=> mobilePanel.classList.toggle('open'));
+      document.querySelectorAll('.mobile-links a').forEach(a=>a.addEventListener('click',()=> mobilePanel.classList.remove('open')));
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
