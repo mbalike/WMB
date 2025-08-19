@@ -237,7 +237,7 @@
   <footer>
     <div class="container foot">
       <div>
-        <div class="brand" style="margin-bottom:10px"><img src="assets/img/logo.png" alt="WMB Logo"/><div class="wordmark" style="font-family:Manrope,DM Sans,sans-serif">Wise Master Builders</div></div>
+        <div class="brand" style="margin-bottom:10px"><img src="assets/img/logo.png" alt="WMB Logo"/><div class="wordmark" style="font-family:Manrope,DM Sans,sans-serif"><span class="wm-red">Wise Master</span> Builders</div></div>
         <p class="mini">A Tanzania‑based contractor providing building and civil engineering solutions with integrity, safety and accountability.</p>
       </div>
       <div>
@@ -280,6 +280,16 @@
   <div class="modal" id="m6"><div class="dialog"><header><strong>Secondary School Classroom Block</strong><button class="close" data-close><i class="bi bi-x-lg"></i></button></header><div class="body"><div class="container" style="padding:0"><div class="grid-3" style="grid-template-columns:1fr 1fr"><div><p class="muted">New 4‑classroom block with staff office, sanitation block and site works; executed in an active school environment.</p><ul class="muted" style="margin:0 0 0 18px;line-height:1.9"><li>Role: Main Contractor</li><li>Duration: 4 months</li><li>Location: Bagamoyo</li></ul></div><div><img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=1600&auto=format&fit=crop" alt="School"/></div></div></div></div></div></div>
 
   <script>
+    // Active nav underline
+    (function(){
+      var path = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('header nav a').forEach(function(a){
+        var href = a.getAttribute('href')||'';
+        var target = href.split('#')[0];
+        if(target && target===path){ a.classList.add('active'); }
+      });
+    })();
+
     // Mobile drawer
     const navToggle = document.getElementById('navToggle');
     const mobilePanel = document.getElementById('mobilePanel');
