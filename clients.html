@@ -32,11 +32,47 @@
     .section-title h2{font-family:Manrope, sans-serif;font-size:clamp(28px,4vw,40px);margin:0}
     .muted{color:var(--ink-2)}
 
+    /* HERO (match Projects page) */
+    .hero{position:relative;min-height:100vh;display:grid;align-items:center;background:var(--bg-soft);overflow:hidden;padding:0}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.7) saturate(1.1)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.7) 50%, rgba(255,255,255,.85))}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;position:relative;z-index:1;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#3a4152;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-family:Manrope,DM Sans,sans-serif;font-size:clamp(34px,6vw,56px);line-height:1.06;margin:.15em 0 .2em}
+    .lead{color:var(--ink-2);font-size:clamp(16px,2vw,19px)}
+    .hero-card{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.1);padding:12px;width:fit-content;height:fit-content;display:inline-block;max-width:500px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);font-weight:800;color:#3b4354}
+
     .clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;align-items:center}
     .client-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft);padding:30px;text-align:center;transition:transform .2s ease}
     .client-card:hover{transform:translateY(-4px)}
     .client-card i{font-size:32px;color:var(--brand-red);margin-bottom:12px;display:block}
     .client-card h3{font-family:Manrope, sans-serif;margin:6px 0}
+
+    /* LOGO CAROUSEL */
+    .logo-carousel{position:relative;max-width:100%;margin:0 auto;padding:20px 0}
+    .carousel-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all .2s ease}
+    .carousel-nav:hover{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    .carousel-nav.prev{left:-20px}
+    .carousel-nav.next{right:-20px}
+    .carousel-nav i{font-size:18px;color:var(--ink)}
+    .carousel-container{overflow:hidden;margin:0 40px}
+    .carousel-track{display:flex;transition:transform .5s ease;gap:20px;width:max-content}
+    .client-logo{flex:0 0 200px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:transform .2s ease}
+    .client-logo:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12)}
+    .client-logo-img{width:100%;height:auto;object-fit:contain;max-height:80px}
+    @media (max-width:768px){.client-logo-img{max-height:60px}}
+    .carousel-indicators{display:flex;justify-content:center;gap:8px;margin-top:20px}
+    .indicator{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;transition:background .2s ease}
+    .indicator.active{background:var(--brand-red)}
+    @media (max-width: 768px){
+      .carousel-nav{width:36px;height:36px}
+      .carousel-nav.prev{left:-18px}
+      .carousel-nav.next{right:-18px}
+      .carousel-container{margin:0 30px}
+      .client-logo{flex:0 0 180px;padding:14px}
+    }
 
     .cta{background:repeating-linear-gradient(135deg, var(--brand-red) 0px, var(--brand-red) 70px, #e11e22 70px, #e11e22 140px);padding:26px 0;text-align:center;color:#fff}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font-weight:700;line-height:1;border:2px solid transparent}
@@ -66,34 +102,65 @@
       </nav>
     </div>
   </header>
+  
+  <!-- HERO (Projects-style) -->
+  <section class="hero" role="banner" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+    <div class="container grid">
+      <div>
+        <span class="eyebrow"><i class="bi bi-people"></i> Clients</span>
+        <h1>Partners we’re proud to work with.</h1>
+        <p class="lead">From regulators and municipalities to NGOs and private developers, we collaborate with organizations that value reliability, safety and accountability.</p>
+      </div>
+      <div class="hero-card">
+        <div class="filters">
+          <span class="chip"><i class="bi bi-bank2"></i> Public Sector</span>
+          <span class="chip"><i class="bi bi-people"></i> NGOs</span>
+          <span class="chip"><i class="bi bi-building"></i> Private Developers</span>
+          <span class="chip"><i class="bi bi-geo-alt"></i> Tanzania‑wide</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <main>
-    <section class="container" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-      <div class="section-title">
-        <h2>Our Clients</h2>
-        <p class="muted">Trusted by institutions, authorities, and businesses across Tanzania.</p>
-      </div>
-      <div class="clients-grid">
-        <div class="client-card">
-          <i class="bi bi-bank2"></i>
-          <h3>Bank of Tanzania</h3>
-          <p class="muted">National banking authority</p>
+    <section id="clients" class="container" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+      <div class="section-title" style="text-align: center; justify-content: center; width: 100%;"><h2>Our Clients</h2></div>
+      <p class="muted" style="max-width:70ch;margin-bottom:32px;text-align:center;margin-left:auto;margin-right:auto">We serve homeowners, SMEs, NGOs, community groups and local authorities.</p>
+
+      <div class="logo-carousel">
+        <button class="carousel-nav prev" aria-label="Previous logos">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="client-logo"><img src="assets/img/clients/logo1.png" alt="Client Logo 1" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo2.png" alt="Client Logo 2" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo3.svg" alt="Client Logo 3" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo4.svg" alt="Client Logo 4" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo5.png" alt="Client Logo 5" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo6.png" alt="Client Logo 6" class="client-logo-img"></div>
+            <!-- duplicates for seamless loop -->
+            <div class="client-logo"><img src="assets/img/clients/logo1.png" alt="Client Logo 1" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo2.png" alt="Client Logo 2" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo3.svg" alt="Client Logo 3" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo4.svg" alt="Client Logo 4" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo5.png" alt="Client Logo 5" class="client-logo-img"></div>
+            <div class="client-logo"><img src="assets/img/clients/logo6.png" alt="Client Logo 6" class="client-logo-img"></div>
+          </div>
         </div>
-        <div class="client-card">
-          <i class="bi bi-building"></i>
-          <h3>Kinondoni Municipal Council</h3>
-          <p class="muted">Local government authority</p>
-        </div>
-        <div class="client-card">
-          <i class="bi bi-train-front"></i>
-          <h3>LATRA</h3>
-          <p class="muted">Land Transport Regulatory Authority</p>
-        </div>
-        <!-- Additional clients -->
-        <div class="client-card">
-          <i class="bi bi-hospital"></i>
-          <h3>Health & Education NGOs</h3>
-          <p class="muted">Various local and international partners</p>
+
+        <button class="carousel-nav next" aria-label="Next logos">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+          <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+          <button class="indicator" data-slide="4" aria-label="Go to slide 5"></button>
+          <button class="indicator" data-slide="5" aria-label="Go to slide 6"></button>
         </div>
       </div>
     </section>
@@ -144,6 +211,57 @@
     <div class="container" style="margin-top:16px"><div class="mini" style="opacity:.7">© <span id="year"></span> Wise Master Builders Ltd. All rights reserved.</div></div>
   </footer>
 
-     <script>document.getElementById('year').textContent=new Date().getFullYear();(function(){var path=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('header nav a').forEach(function(a){var href=a.getAttribute('href')||'';var target=href.split('#')[0];if(!target)return;if(target===path){a.classList.add('active');}});})();</script>
+     <script>
+       document.getElementById('year').textContent=new Date().getFullYear();
+       (function(){
+         var path=location.pathname.split('/').pop()||'index.html';
+         document.querySelectorAll('header nav a').forEach(function(a){
+           var href=a.getAttribute('href')||'';
+           var target=href.split('#')[0];
+           if(!target)return; if(target===path){a.classList.add('active');}
+         });
+       })();
+
+       // Logo Carousel
+       (function(){
+         const track = document.querySelector('.carousel-track');
+         const prevBtn = document.querySelector('.carousel-nav.prev');
+         const nextBtn = document.querySelector('.carousel-nav.next');
+         const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+         if(!track) return;
+         let currentIndex = 0;
+         const totalSlides = 6;
+         const slideWidth = 220; // 200px logo + 20px gap
+         let isTransitioning = false;
+         function updateCarousel(index, instant = false){
+           currentIndex = index;
+           const translateX = -currentIndex * slideWidth;
+           track.style.transition = instant ? 'none' : 'transform 0.5s ease';
+           track.style.transform = 'translateX(' + translateX + 'px)';
+           indicators.forEach((ind,i)=> ind.classList.toggle('active', i===currentIndex));
+         }
+         function nextSlide(){
+           if(isTransitioning) return; isTransitioning = true;
+           const nextIndex = currentIndex + 1; updateCarousel(nextIndex);
+           if(nextIndex >= totalSlides){
+             setTimeout(()=>{ updateCarousel(0,true); setTimeout(()=>{ track.style.transition='transform 0.5s ease'; isTransitioning=false;},10); },500);
+           } else { setTimeout(()=> isTransitioning=false, 500); }
+         }
+         function prevSlide(){
+           if(isTransitioning) return; isTransitioning = true;
+           const prevIndex = currentIndex - 1;
+           if(prevIndex < 0){
+             updateCarousel(totalSlides-1, true);
+             setTimeout(()=>{ updateCarousel(totalSlides-2); setTimeout(()=>{ track.style.transition='transform 0.5s ease'; isTransitioning=false;},500); },10);
+           } else {
+             updateCarousel(prevIndex); setTimeout(()=> isTransitioning=false, 500);
+           }
+         }
+         if(prevBtn) prevBtn.addEventListener('click', prevSlide);
+         if(nextBtn) nextBtn.addEventListener('click', nextSlide);
+         indicators.forEach((indicator, index)=> indicator.addEventListener('click', ()=>{ if(!isTransitioning) updateCarousel(index); }));
+         setInterval(nextSlide, 4000);
+       })();
+     </script>
 </body>
 </html>
