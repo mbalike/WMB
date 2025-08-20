@@ -85,12 +85,15 @@
     .close{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer}
 
     /* CTA & Footer */
-    .cta{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
-    .cta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
-    @media (max-width: 980px){.cta .wrap{grid-template-columns:1fr}}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:800}
-    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(255,42,46,.25)}
-    .btn.ghost{border:1.4px solid #cfd6e4;color:#1f2430;background:#fff}
+    .cta{background:repeating-linear-gradient(135deg, var(--brand-red) 0px, var(--brand-red) 70px, #e11e22 70px, #e11e22 140px);padding:26px 0;color:#fff}
+    .cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px}
+    @media (max-width: 980px){.cta .wrap{flex-direction:column;align-items:flex-start}}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font-weight:700;line-height:1;border:2px solid transparent}
+    .btn i{font-size:16px}
+    .cta .btn.primary{background:#fff;color:var(--brand-red);border-color:#fff;box-shadow:none}
+    .cta .btn.primary:hover{background:transparent;color:#fff}
+    .cta .btn.ghost{border:2px solid #fff;color:#fff;background:transparent}
+    .cta .btn.ghost:hover{background:#fff;color:var(--brand-red)}
     .wm-red{color:var(--brand-red, var(--accent, #ff2a2e))}
 
     footer{background:#f8fafc;border-top:1px solid var(--line);color:#495167;padding:32px 0}
@@ -220,15 +223,15 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+  <section class="cta">
     <div class="container wrap">
       <div>
-        <h3 style="margin:0 0 6px 0;font-family:Manrope,DM Sans,sans-serif">Got a project in mind?</h3>
-        <p class="muted" style="margin:0">Tell us your location, budget range and timeline—we’ll share a practical delivery plan.</p>
+        <h3 style="margin:0 0 4px 0;font-family:Manrope,DM Sans,sans-serif;color:#fff">Got a project in mind?</h3>
+        <p class="muted" style="margin:0;color:#ffe9ea">Tell us your location, budget range and timeline—we’ll share a practical delivery plan.</p>
       </div>
       <div>
         <a class="btn primary" href="contact.html"><i class="bi bi-envelope-paper"></i> Request a Quote</a>
-        <a class="btn ghost" href="downloads.html" style="margin-left:8px"><i class="bi bi-file-earmark-arrow-down"></i> Company Profile</a>
+        <a class="btn ghost" href="assets/documents/WMB-Company-Profile.pdf" download style="margin-left:8px"><i class="bi bi-file-earmark-arrow-down"></i> Company Profile</a>
       </div>
     </div>
   </section>

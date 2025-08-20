@@ -35,9 +35,10 @@
     .client-card i{font-size:32px;color:var(--brand-red);margin-bottom:12px;display:block}
     .client-card h3{font-family:Manrope, sans-serif;margin:6px 0}
 
-    .cta{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 0;text-align:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700}
-    .btn.primary{background:var(--brand-red);color:#fff;box-shadow:0 8px 20px rgba(255,42,46,.25)}
+    .cta{background:repeating-linear-gradient(135deg, var(--brand-red) 0px, var(--brand-red) 70px, #e11e22 70px, #e11e22 140px);padding:26px 0;text-align:center;color:#fff}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font-weight:700;line-height:1;border:2px solid transparent}
+    .btn.primary{background:#fff;color:var(--brand-red);border-color:#fff}
+    .btn.primary:hover{background:transparent;color:#fff}
 
     .wm-red{color:var(--brand-red, var(--accent, #ff2a2e))}
 
@@ -94,10 +95,10 @@
       </div>
     </section>
 
-    <section class="cta" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+    <section class="cta">
       <div class="container">
-        <h2 style="font-family:Manrope,sans-serif;margin-bottom:10px">Want to work with us?</h2>
-        <p class="muted" style="margin-bottom:20px">We’re open to partnerships with government, corporates, NGOs, and developers across Tanzania.</p>
+        <h2 style="font-family:Manrope,sans-serif;margin-bottom:8px;color:#fff">Want to work with us?</h2>
+        <p class="muted" style="margin-bottom:16px;color:#ffe9ea">We’re open to partnerships with government, corporates, NGOs, and developers across Tanzania.</p>
         <a href="contact.html" class="btn primary"><i class="bi bi-envelope"></i> Get in Touch</a>
       </div>
     </section>
