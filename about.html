@@ -56,11 +56,11 @@
     .hero{position:relative;min-height:100vh;display:grid;align-items:center;background:var(--soft);overflow:hidden;padding:0}
     .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.7) saturate(1.1)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.7) 50%, rgba(255,255,255,.85))}
-    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;position:relative;z-index:1}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;position:relative;z-index:1;align-items:center}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#3a4152;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     h1{font-family:Manrope,DM Sans,sans-serif;font-size:clamp(34px,6vw,56px);line-height:1.06;margin:.15em 0 .2em}
     .lead{color:var(--ink-2);font-size:clamp(16px,2vw,19px)}
-    .hero-card{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.1);padding:24px}
+    .hero-card{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.1);padding:12px;width:fit-content;height:fit-content;display:inline-block;min-width:600px}
     @media (max-width: 980px){.hero .grid{grid-template-columns:1fr}}
 
     /* Sections */
@@ -76,9 +76,9 @@
     @media (max-width: 620px){.cards{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-soft);padding:20px}
 
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .kpis{display:grid;grid-template-columns:repeat(4,auto);gap:12px;height:fit-content;justify-content:center}
     @media (max-width: 980px){.kpis{grid-template-columns:1fr 1fr}}
-    .kpi{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px dashed rgba(255,255,255,.4);border-radius:14px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px)}
+    .kpi{display:flex;gap:10px;align-items:flex-start;padding:8px 12px;border:1px dashed rgba(255,255,255,.4);border-radius:8px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);min-width:120px}
 
     /* Timeline */
     .timeline{position:relative;border-left:2px solid var(--line);margin-left:16px}
@@ -88,7 +88,7 @@
     /* Certifications list */
     .list{display:grid;gap:10px}
     .list .row{display:flex;gap:12px;align-items:center;border:1px solid var(--line);padding:12px;border-radius:12px;background:#fff}
-    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;color:#3b4354;font-weight:800}
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#ffedf0;color:#b0020a;border:1px solid #ffd3d8;font-weight:800}
 
     /* CTA */
     .cta{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
@@ -148,10 +148,10 @@
       </div>
       <div class="hero-card">
         <div class="kpis">
-          <div class="kpi"><i class="bi bi-shield-check" style="font-size:22px;color:#1d8540"></i><div><strong>HSE First</strong><div class="muted">Safety culture across all sites</div></div></div>
-          <div class="kpi"><i class="bi bi-clipboard-check" style="font-size:22px;color:#0f62fe"></i><div><strong>QA/QC</strong><div class="muted">Inspection & documentation</div></div></div>
-          <div class="kpi"><i class="bi bi-hourglass-split" style="font-size:22px;color:#d17d00"></i><div><strong>On‑Time Delivery</strong><div class="muted">Practical scheduling & controls</div></div></div>
-          <div class="kpi"><i class="bi bi-cash-coin" style="font-size:22px;color:#b0020a"></i><div><strong>Cost Discipline</strong><div class="muted">Transparent budgeting</div></div></div>
+          <div class="kpi"><i class="bi bi-shield-check" style="font-size:18px;color:#1d8540;margin-top:2px"></i><div><strong style="display:block;line-height:1.2">HSE First</strong><div class="muted" style="font-size:13px;line-height:1.3">Safety culture across all sites</div></div></div>
+          <div class="kpi"><i class="bi bi-clipboard-check" style="font-size:18px;color:#0f62fe;margin-top:2px"></i><div><strong style="display:block;line-height:1.2">QA/QC</strong><div class="muted" style="font-size:13px;line-height:1.3;text-align:left;">Inspection & documentation</div></div></div>
+          <div class="kpi"><i class="bi bi-hourglass-split" style="font-size:18px;color:#d17d00;margin-top:2px"></i><div><strong style="display:block;line-height:1.2">On‑Time Delivery</strong><div class="muted" style="font-size:13px;line-height:1.3">Practical scheduling & controls</div></div></div>
+          <div class="kpi"><i class="bi bi-cash-coin" style="font-size:18px;color:#b0020a;margin-top:2px"></i><div><strong style="display:block;line-height:1.2">Cost Discipline</strong><div class="muted" style="font-size:13px;line-height:1.3">Transparent budgeting</div></div></div>
         </div>
       </div>
     </div>
@@ -162,9 +162,9 @@
     <div class="container">
       <div class="title"><span class="dot"></span><h2>Mission, Vision & Core Values</h2></div>
       <div class="cards">
-        <div class="card"><h3><i class="bi bi-bullseye"></i> Mission</h3><p>To build with integrity—transparent, ethical and honest—while meeting the highest industry standards and consistently exceeding client expectations.</p></div>
-        <div class="card"><h3><i class="bi bi-stars"></i> Vision</h3><p>To be a leading construction company recognized for exceptional craftsmanship, a customer‑centric approach and contributions to resilient, sustainable communities.</p></div>
-        <div class="card"><h3><i class="bi bi-heart-pulse"></i> Core Values</h3>
+        <div class="card"><h3><i class="bi bi-bullseye" style="color:#b0020a"></i> Mission</h3><p>To build with integrity—transparent, ethical and honest—while meeting the highest industry standards and consistently exceeding client expectations.</p></div>
+        <div class="card"><h3><i class="bi bi-stars" style="color:#b0020a"></i> Vision</h3><p>To be a leading construction company recognized for exceptional craftsmanship, a customer‑centric approach and contributions to resilient, sustainable communities.</p></div>
+        <div class="card"><h3><i class="bi bi-heart-pulse" style="color:#b0020a"></i> Core Values</h3>
           <ul class="muted" style="margin:0 0 0 18px;line-height:1.9">
             <li>Integrity & accountability</li>
             <li>Safety & respect for people</li>
