@@ -22,15 +22,28 @@
     .header-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-family:Manrope, sans-serif}
     .brand img{height:36px;width:auto}
-    nav{display:flex;gap:20px;align-items:center}
-    nav a{font-weight:700;color:var(--ink)}
-    nav a:hover, nav a.active{text-decoration:underline;text-underline-offset:4px}
-    nav a.active{text-decoration:underline;text-underline-offset:4px}
+    nav.primary{display:flex;gap:20px;align-items:center}
+    nav.primary a{font-weight:700;color:var(--ink)}
+    nav.primary a:hover, nav.primary a.active{text-decoration:underline;text-underline-offset:4px}
+    nav.primary a.active{text-decoration:underline;text-underline-offset:4px}
+    .nav-toggle{display:none}
+    .mobile-panel{display:none}
     main{padding-top:90px}
     section{padding:80px 0}
     .section-title{margin-bottom:30px}
     .section-title h2{font-family:Manrope, sans-serif;font-size:clamp(28px,4vw,40px);margin:0}
     .muted{color:var(--ink-2)}
+
+    /* MOBILE MENU */
+    @media (max-width: 980px){
+      nav.primary{display:none}
+      .nav-toggle{display:inline-flex;align-items:center;gap:8px;color:#1f2430;background:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:12px}
+      .mobile-panel{display:block;position:fixed;inset:70px 0 0 0;background:#fff;border-top:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:2000;height:calc(100vh - 70px);overflow:auto}
+      .mobile-panel.open{opacity:1;transform:translateY(0);pointer-events:auto}
+      .mobile-links{display:grid;gap:8px;padding:18px}
+      .mobile-links a{padding:14px 12px;border-radius:12px;font-weight:800}
+      .mobile-links a:hover{background:var(--bg-soft)}
+    }
 
     /* HERO (match Projects page) */
     .hero{position:relative;min-height:100vh;display:grid;align-items:center;background:var(--bg-soft);overflow:hidden;padding:0}
@@ -91,7 +104,7 @@
   <header>
     <div class="container header-inner">
       <div class="brand"><img src="assets/img/logo.png" alt="WMB Logo"><span class="wm-red">Wise Master</span> Builders</div>
-      <nav>
+      <nav class="primary" aria-label="Primary Navigation">
         <a href="index.html">Home</a>
         <a href="about.html">Who We Are</a>
         <a href="services.html">What We Do</a>
@@ -100,6 +113,18 @@
         <a href="contact.html">Contact</a>
         <a class="cta-btn" href="assets/documents/WMB-Company-Profile.pdf" style="background:#ff2a2e;color:#fff;border-radius:6px;padding:10px 18px;font-weight:700;" download>Company Profile</a>
       </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open Menu">Menu</button>
+    </div>
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">Who We Are</a>
+        <a href="services.html">What We Do</a>
+        <a href="projects.html">Projects</a>
+        <a href="clients.html">Clients</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta-btn" href="assets/documents/WMB-Company-Profile.pdf" style="background:#ff2a2e;color:#fff;border-radius:6px;padding:10px 18px;font-weight:700;display:inline-flex;justify-content:center" download>Company Profile</a>
+      </div>
     </div>
   </header>
   
@@ -261,6 +286,15 @@
          if(nextBtn) nextBtn.addEventListener('click', nextSlide);
          indicators.forEach((indicator, index)=> indicator.addEventListener('click', ()=>{ if(!isTransitioning) updateCarousel(index); }));
          setInterval(nextSlide, 4000);
+       })();
+
+       // Mobile nav toggle
+       (function(){
+         const navToggle = document.getElementById('navToggle');
+         const mobilePanel = document.getElementById('mobilePanel');
+         if(!navToggle || !mobilePanel) return;
+         navToggle.addEventListener('click', ()=> mobilePanel.classList.toggle('open'));
+         document.querySelectorAll('.mobile-links a').forEach(a=> a.addEventListener('click', ()=> mobilePanel.classList.remove('open')));
        })();
      </script>
 </body>
